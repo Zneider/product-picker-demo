@@ -1,35 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useNavigate } from "react-router";
+import { Header } from "./components/Header";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const navigate = useNavigate();
+
+  const onclickHandler = () => {
+    navigate("/signup");
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Header theme="light" />
+      <main
+        className="pt-[72px] bg-scroll h-full"
+        style={{
+          backgroundImage: "url('/bg_frontpage.png')",
+          backgroundPosition: "top center",
+        }}
+      >
+        <section className="flex d´flex-col h-full items-end bg-gradient-to-b from-transparent to-[#003732] to-50% justify-center">
+          <p className="h-1/2 text-white mt-1/2 bg-[#003732] w-full flex flex-col items-center gap-y-[8px] w-[500px]">
+            <h1 className="text-[12px] font-bold">Produktvælger</h1>
+            <h2 className="text-[48px] font-extralight flex text-center">
+              Lad os hjælpe dig med at finde rigtig ladeløsning
+            </h2>
+            <span className="text-[12px] text-center">
+              Svar på spørgsmålene og find ud af hvilken Clever løsning der
+              passer bedst til dine behov
+            </span>
+            <button
+              className="px-4 py-1 bg-white text-[#003732] text-[12px]"
+              onClick={onclickHandler}
+              title="Tag testen her"
+            >
+              Tag testen her
+            </button>
+          </p>
+        </section>
+      </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
