@@ -5,9 +5,7 @@
 :root {
   display: block;
   margin: auto;
-  max-width: 1600px;
   width: 100vw;
-  min-width: 720px;
   height: 100vh;
   font-family: "Inter", serif;
   font-optical-sizing: auto;
@@ -18,6 +16,10 @@
 article {
   height: 100vh;
   width: 100vw;
-  max-width: 1600px;
+  max-width: 1440px;
   margin: auto;
+}
+
+header {
+  max-width: 1440px;
 }

@@ -1,5 +1,3 @@
-import logo from "../assets/logo.svg";
-import bulb from "../assets/Bulb.svg";
 import classNames from "classnames";
 import { Logo } from "./icons/Logo";
 import { Bulb } from "./icons/Bulb";
