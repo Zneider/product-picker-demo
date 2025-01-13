@@ -11,12 +11,7 @@ export const SignupForm = () => {
   const [decisions, setDecisions] = useState<string[]>([]);
   const [doSubmit, setSubmit] = useState(false);
 
-  useEffect(() => {
-    if (doSubmit) submitHandler();
-  }, [doSubmit]);
-
   const submitHandler = () => {
-    console.log("submit");
     const form = document.createElement("form");
     form.setAttribute("hidden", "true");
     form.action = "/result";
@@ -36,8 +31,11 @@ export const SignupForm = () => {
     form.submit();
   };
 
+  useEffect(() => {
+    if (doSubmit) submitHandler();
+  }, [doSubmit, submitHandler]);
+
   const proceedHandler = (currentStep: string) => (value: string) => {
-    console.log("proceed from", currentStep);
     const idx = decisionTree.findIndex(
       (decision) => decision.name === currentStep
     );
